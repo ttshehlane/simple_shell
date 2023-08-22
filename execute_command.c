@@ -79,6 +79,8 @@ int execute_external(char *full_path, char **av, char **env, char *program)
 	int status = 0;
 	pid_t pid = fork();
 
+	if (!full_path)
+		return (-1);
 	if (pid == -1)
 	{
 		perror(program);
