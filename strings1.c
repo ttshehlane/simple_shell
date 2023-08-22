@@ -40,3 +40,51 @@ int _strcmp(char *str1, char *str2)
 		result = strlen1 - strlen2;
 	return (result);
 }
+
+/**
+ * _strcpy - copies a string
+ * @dest: string to copy to
+ * @src: string to copy from
+ * Return: string copy else NULL on failure
+*/
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	if (!dest)
+		return (NULL);
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * _strcat - concatenates 2 strings
+ * @dest: first string
+ * @src: sec string
+ * Return: concatenated string else NULL on failure
+*/
+
+char *_strcat(char *dest, char *src)
+{
+	int i, j;
+
+	if (!src)
+		return (NULL);
+	i = 0;
+	while (dest[i] != '\0') /*Moving to end of dest*/
+		i++;
+	j = 0;
+	while (src[j] != 0)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

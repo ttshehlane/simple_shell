@@ -17,9 +17,9 @@ char *get_fpath(char *temp, char *usr_cmd)
 	{
 		return (NULL);
 	}
-	strcpy(concated, temp);
-	strcat(concated, "/");
-	strcat(concated, usr_cmd);
+	_strcpy(concated, temp);
+	_strcat(concated, "/");
+	_strcat(concated, usr_cmd);
 	return (concated);
 }
 /**

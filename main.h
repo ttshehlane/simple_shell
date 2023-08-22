@@ -25,6 +25,8 @@ int echo_builtin(char **av);
 /*String handling functions*/
 int _strlen(char *str);
 int _strcmp(char *str1, char *str2);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
 char *_strdup(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void free_tkns(char **tkn_str);
