@@ -21,10 +21,10 @@ int cd_builtin(char **av);
 int echo_builtin(char **av);
 /*String handling functions*/
 int _strlen(char *str);
-int _strcmp(char *str1, *str2);
+int _strcmp(char *str1, char *str2);
 char *_strdup(char *str);
 char *_memcpy(char *dest, char *src, unsigned int n);
-void free_tks(char **tkn_str);
+void free_tkns(char **tkn_str);
 /*Path and env functions*/
 char *get_fullpath(char *usr_cmd);
 /* Typdefs and external variables */
