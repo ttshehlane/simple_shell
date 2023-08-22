@@ -1,18 +1,18 @@
 #inlcude "main.h"
 
 /**
- * main - program entry
- * @argc: num of args
- * @argv: array of cmd args
- * Return: 0 on success or 1 on failure
+ * main - shell program entry
+ * @argc: number of arguments
+ * @argv: array of command arguments
+ * Return: 0 on success run or 1 on failure
  */
 int main(int argc, char **argv)
 {
 	char **arg = NULL;
+	unsigned int i = 1;
 	char **env = environ;
-	unsigned in i = 1;
 
-	if (isatty(STDIN_FILENO) && argc > 1)
+	if (argc && isatty(STDIN_FILENO) > 1)
 	{
 		arg = &argv[i];
 		execute_cmd(arg, env, arg[0]);
