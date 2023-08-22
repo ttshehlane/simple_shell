@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * execute_cmd - Executes built-in commands and also executes external commands
@@ -27,7 +28,7 @@ int execute_cmd(char **av, char **env, char *program)
 			free(full_path);
 			return (status);
 		}
-		avCpy = &(av[1]);
+		avCpy = &(av[0]);
 		status = execute_external(full_path, avCpy, env, program);
 		free(full_path);
 		return (status);
@@ -69,7 +70,7 @@ int execute_builtins(char **av)
  * execute_external - process gets created to execute a non-built-in command
  * @full_path: absolute full path to the location of the program
  * @av: string array of command arguments to be ran
- * @env: machine environment vaariable
+ * @env: machine environment variable
  * @program: name of the program
  * Return: 1 on successful compilation and exit on failure
  */

@@ -1,0 +1,25 @@
+int status = 0, i;
+	pid_t pid;
+	char **argsFra = malloc(sizeof(av) + 2);
+	argsFra[0] = full_path;
+	for (i = 1; av[i] != NULL; i++)
+	{
+		argsFra[i] = av[i];
+	}
+	argsFra[i] = NULL;
+
+	pid = fork();
+
+	if (pid == -1)
+	{
+		perror(program);
+		return (-1);
+	}
+	if (pid == 0)
+	{
+		if (execve(full_path, argsFra, env) == -1)
+		{
+			perror(program);
+			exit(1);
+		}
+	}
