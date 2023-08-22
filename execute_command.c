@@ -77,10 +77,11 @@ int execute_builtins(char **av)
 int execute_external(char *full_path, char **av, char **env, char *program)
 {
 	int status = 0;
-	pid_t pid = fork();
+	pid_t pid;
 
 	if (!full_path)
 		return (-1);
+	pid = fork();
 	if (pid == -1)
 	{
 		perror(program);
