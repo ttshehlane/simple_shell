@@ -1,10 +1,13 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
+
+extern char **environ;
 
 void shell_loop(char **env, char *program);
 /*User input*/
@@ -29,5 +32,5 @@ void free_tkns(char **tkn_str);
 char *get_fullpath(char *usr_cmd);
 /* Typdefs and external variables */
 typedef int (*func_builtin)(char **av);
-extern char **environ;
+
 #endif /* MAIN_H*/
